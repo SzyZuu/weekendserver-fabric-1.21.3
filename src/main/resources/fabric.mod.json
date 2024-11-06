@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "weekendserver",
+	"version": "${version}",
+	"name": "WeekendServer",
+	"description": "Turn the server off during weekdays",
+	"authors": [
+		"SzyZu"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/weekendserver/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.weekendserver.WeekendServer"
+		],
+		"client": [
+			"com.weekendserver.WeekendServerClient"
+		]
+	},
+	"mixins": [
+		"weekendserver.mixins.json",
+		{
+			"config": "weekendserver.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
